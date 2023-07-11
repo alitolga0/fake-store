@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        position: absolute;
+        background-color: aliceblue;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      .products {
+        padding: 0.2rem;
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(390px, 1fr));
+        row-gap: 10px;
+        width: 95vw;
+        margin: 10px 100px;
+        
+      }
+      .product {
+        position: relative;
+        height: 500px;
+        width: 390px;
+        background-color: white;
+        padding: 0 0.5rem;
+        line-height: 25px;
+      }
+      .product img {
+        width: 380px;
+        height: 400px;
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.4);
+        object-fit: scale-down;
+      }
+
+      .sepeteAt {
+        position: absolute;
+        padding: 0.5 rem 0.5 rem;
+        background-color: orange;
+        color: white;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        right: 10px;
+        bottom: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+      .sepeteAt:hover {
+        background-color: darkorange;
+      }
+      .sepeteAt i {
+        margin-left: 5px;
+      }
+      .select {
+        margin-left: 800px;
+        margin-right: 800px;
+        margin-top: 50px;
+      }
+      .category{
+      margin-left: 40px;
+      }
+      ul {
+    list-style-type: none;
+}
+    </style>
+  </head>
+  <body>
+    <div class="select">
+      <select onchange="sortProducts(this.value)" >
+        <option value="secim"> Seçim yapınız</option>
+        <option value="artan">Ücrete Göre Artan</option>
+        <option value="azalan">Ücrete Göre Azalan</option>
+      </select>
+    </div>
+     <div class="category">
+      <h2>Kategoriler</h2>
+      <ul>
+       <li> <a  href="#" onclick="getElectronicsProducts()">Elektronik</a></li>
+       <li><a href="#" onclick="getSeweleryProducts()">Kuyumculuk</a></li> 
+       <li><a href="#" onclick="getManClothingProducts()">Erkek Giyim </a></li> 
+        <li><a href="#"onclick="getWomenClothingProducts()">Kadın Giyim</a></li>
+      </ul>
+    </div>
+    
+    <div class="products"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
